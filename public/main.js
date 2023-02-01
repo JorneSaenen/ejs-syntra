@@ -16,7 +16,7 @@ form.onsubmit = async (e) => {
     });
     const data = await res.json();
     if (!res.ok) throw new Error(data);
-    //window.location.reload();
+    window.location.reload();
   } catch (error) {
     mess.style.display = 'block';
     console.log(error.message);
