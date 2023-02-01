@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title><%= pageTitle %></title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <%- include('partials/header.ejs'); -%>
+    <main>
+      <section>
+        <form>
+          <input type="text" name="title" placeholder="todo..." />
+          <p class="error__message error__show" style="color: red">
+            Email is not valid
+          </p>
+          <input type="email" , name="email" placeholder="email..." />
+          <button type="submit">Add Todo</button>
+        </form>
+      </section>
+      <section>
+        <ul>
+          <% todos.forEach(todo => { %>
+          <li><%= todo.title %> ( <%= todo.email %> )</li>
+          <% }) %>
+        </ul>
+      </section>
+    </main>
+    <%- include('partials/footer.ejs'); -%>
+    <script src="main.js"></script>
+  </body>
+</html>
